@@ -1,0 +1,36 @@
+
+# Color files by types
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+set horizontal-scroll-mode on
+# Completion tweaks
+set completion-ignore-case on
+set completion-map-case on
+set show-all-if-ambiguous on
+set mark-directories on
+set mark-symlinked-directories on
+set match-hidden-files on
+set skip-completed-text on
+set page-completions on
+set completion-query-items 200
+
+# Allow UTF-8 input and output
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Bash-specific mappings and settings
+$if Bash
+  Space: magic-space
+  \C-w: backward-kill-word
+  "\C-n": menu-complete
+$endif
