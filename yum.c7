@@ -1,0 +1,23 @@
+BASE="vim
+smem
+sysstat
+collectl
+ps_mem
+psmisc
+psacct
+git
+bash-completion.noarch
+net-tools
+ntp 
+vim
+git "
+
+yum -y install epel-release.noarch
+yum -y update
+yum -y install $BASE  
+
+systemctl --now disable firewalld
+systemctl --now disable postfix.service
+systemctl --now  enable ntpd
+
+yum remove NetworkManager
