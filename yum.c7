@@ -2,6 +2,7 @@ BASE="vim
 smem
 sysstat
 collectl
+clustershell
 ps_mem
 psmisc
 psacct
@@ -12,12 +13,12 @@ ntp
 vim
 git "
 
-yum -y install epel-release.noarch
 yum -y update
+yum -y install epel-release.noarch
 yum -y install $BASE  
 
 systemctl --now disable firewalld
 systemctl --now disable postfix.service
 systemctl --now  enable ntpd
 
-yum remove NetworkManager
+yum -y remove NetworkManager
